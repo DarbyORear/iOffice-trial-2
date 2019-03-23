@@ -11,7 +11,7 @@
 <a href="#">WorkPoint</a>
 <a href="#">WorkHub</a>
 <a href="/workplace">WorkPlace</a>
-<a href="#">FloorPlan</a>
+<a href="/floorplan">FloorPlan</a>
 
 </body>
 </html>
