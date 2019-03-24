@@ -2,10 +2,46 @@ package com.iOfficeProject.trialproject.APIclasses;
 
 import java.util.List;
 
-public class WorkPlace {
+public class WorkPlaces {
 	
-	private List <WorkPlace> workplaces;
-	private String _id;
+	private List <WorkPoint> workpoints;
+	
+	public List <WorkPoint> getWorkpoints(){
+		return workpoints;
+	}
+	
+	public WorkPlaces() {
+		super();
+	}
+	
+	@Override
+	public String toString() {
+		return "Senses [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+	
+	
+}
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//Commenting out the way I had this POJO set up first
+	/*private String _id;
 	private String name;
 	private String address;
 	private String timezone;
@@ -15,20 +51,6 @@ public class WorkPlace {
 	private int activeStartHour;
 	private int activeEndHour;
 	
-	
-//	private String id;
-//	private String name;
-//	private String address;
-//	private Group group;
-//	private String owner;
-//	private String formattedAddress;
-//	private Location location;
-//	private String timezone;
-//	private boolean sleep;
-//	private String start;
-//	private String end;
-//	private String activeStartHour;
-//	private String activeEndHour;
 	
 	
 	
@@ -117,7 +139,7 @@ public class WorkPlace {
 	}
 	
 	
-}
+}*/
 	
 
 
