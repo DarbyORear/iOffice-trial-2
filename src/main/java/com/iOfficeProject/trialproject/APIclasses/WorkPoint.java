@@ -1,32 +1,56 @@
 package com.iOfficeProject.trialproject.APIclasses;
 
-public class WorkPoint {
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
+public class WorkPoint {
+	
+	//instance variables that pertain to workpoint data:
 	private String _id;
-	private String uuid;
 	private String name;
-	private String firmwareVersion;
 	private String workPlaceId;
 	private String workPlaceName;
-	private String lastConnect;
+	private Date lastConnect;
 	private boolean connected;
 	private boolean recentlyConnected;
 	private boolean occupied;
-	private String occupiedBy;
-	private String occupyReason;
-	private int rssi;
-	private int battery;
-	private double optical;
-	private String floorPlanId;
-	private int floorPlanX;
-	private int floorPlanY;
-	private String floorPlanName;
-	private String tags;
-	private String notes;
+	private Date occupancyChanged;
+	
+	//instance variables that pertain to iOffice sensor data:
+	private Date startDate;
+	private Date endDate;
+	private String uId;
+	private boolean utilized;
+
 	
 
 	public WorkPoint() {
 		
+	}
+	
+	//ADDING A CONSTRUCTOR WITH PARAMETERS:
+	public WorkPoint(String _id, boolean occupied) {
+		this._id= _id;
+		this.occupied = occupied;
+		
+	}
+	
+	public WorkPoint(String _id, boolean occupied, Date lastConnect, Date occupancyChanged) {
+		this._id = _id;
+		this.occupied = occupied;
+		this.lastConnect = lastConnect;
+		this.occupancyChanged = occupancyChanged;
+	}
+
+
+	public Date getOccupancyChanged() {
+		return occupancyChanged;
+	}
+
+
+	public void setOccupancyChanged(Date occupancyChanged) {
+		this.occupancyChanged = occupancyChanged;
 	}
 
 
@@ -42,18 +66,6 @@ public class WorkPoint {
 
 
 
-	public String getUuid() {
-		return uuid;
-	}
-
-
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
-
-
-
 	public String getName() {
 		return name;
 	}
@@ -62,18 +74,6 @@ public class WorkPoint {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-
-
-	public String getFirmwareVersion() {
-		return firmwareVersion;
-	}
-
-
-
-	public void setFirmwareVersion(String firmwareVersion) {
-		this.firmwareVersion = firmwareVersion;
 	}
 
 
@@ -102,13 +102,13 @@ public class WorkPoint {
 
 
 
-	public String getLastConnect() {
+	public Date getLastConnect() {
 		return lastConnect;
 	}
 
 
 
-	public void setLastConnect(String lastConnect) {
+	public void setLastConnect(Date lastConnect) {
 		this.lastConnect = lastConnect;
 	}
 
@@ -147,139 +147,78 @@ public class WorkPoint {
 	public void setOccupied(boolean occupied) {
 		this.occupied = occupied;
 	}
-
-
-
-	public String getOccupiedBy() {
-		return occupiedBy;
-	}
-
-
-
-	public void setOccupiedBy(String occupiedBy) {
-		this.occupiedBy = occupiedBy;
-	}
-
-
-
-	public String getOccupyReason() {
-		return occupyReason;
-	}
-
-
-
-	public void setOccupyReason(String occupyReason) {
-		this.occupyReason = occupyReason;
-	}
-
-
-
-	public int getRssi() {
-		return rssi;
-	}
-
-
-
-	public void setRssi(int rssi) {
-		this.rssi = rssi;
-	}
-
-
-
-	public int getBattery() {
-		return battery;
-	}
-
-
-
-	public void setBattery(int battery) {
-		this.battery = battery;
-	}
-
-
-
-	public double getOptical() {
-		return optical;
-	}
-
-
-
-	public void setOptical(double optical) {
-		this.optical = optical;
-	}
-
-
-
-	public String getFloorPlanId() {
-		return floorPlanId;
-	}
-
-
-
-	public void setFloorPlanId(String floorPlanId) {
-		this.floorPlanId = floorPlanId;
-	}
-
-
-
-	public int getFloorPlanX() {
-		return floorPlanX;
-	}
-
-
-
-	public void setFloorPlanX(int floorPlanX) {
-		this.floorPlanX = floorPlanX;
-	}
-
-
-
-	public int getFloorPlanY() {
-		return floorPlanY;
-	}
-
-
-
-	public void setFloorPlanY(int floorPlanY) {
-		this.floorPlanY = floorPlanY;
-	}
-
-
-
-	public String getFloorPlanName() {
-		return floorPlanName;
-	}
-
-
-
-	public void setFloorPlanName(String floorPlanName) {
-		this.floorPlanName = floorPlanName;
-	}
-
-
-
-	public String getTags() {
-		return tags;
-	}
-
-
-
-	public void setTags(String tags) {
-		this.tags = tags;
-	}
-
-
-
-	public String getNotes() {
-		return notes;
-	}
-
-
-
-	public void setNotes(String notes) {
-		this.notes = notes;
-	}
 	
 	
 
-}
+
+//Methods for translating workpoint data to sensor data:
+	
+	//method to get uid for each sensor:
+	public String sensorId(){
+//		//get id/uuid for each sensor
+//		String thisSensor = list.getWorkpoint().getUuid();
+		uId = this.get_id();
+		return uId;
+		
+	}
+	
+	//method to determine if sensors are utilized
+	public boolean utilized(){
+		
+//		//get id for each sensor
+		boolean occupied = this.isOccupied();
+		
+		if(occupied == false){
+			utilized = false;
+		};
+
+		//if isOccupied, then isUtilized:
+		return utilized;
+	}
+	
+	
+	//method to find date and time sensor connected:
+	//NOTE: SHOULD THIS BE TYPE STRING OR DATE?
+	public Date findStartDate() {
+		//CoWorkr startDate is listed as: lastConnect
+		startDate = this.getLastConnect();
+		return startDate;
+
+	}
+	
+	//method to find date and time sensor disconnected:
+	public Date findEndDate() {
+		//Coworkr endDate is listed as: occupancyChanged
+		
+		boolean occupied = this.isOccupied();
+		if(!occupied) {
+			endDate = this.getOccupancyChanged();
+		} else {
+			//return today's date and current time
+		}
+		
+		return endDate;
+		
+	}
+
+	
+
+//method to take a Workpoint and convert it to a sensor??:
+	/*public Map<String, Object> createMap(/*Map<String, Object> newSensor)*//* {
+	Map<String, Object> sensor = new HashMap<String, Object>();
+		sensor.put("utilized", this.isOccupied());
+		sensor.put("startDate", this.getLastConnect());
+		sensor.put("sensorUid", this.get_id());
+		sensor.put("endDate", this.getOccupancyChanged());
+		
+		System.out.println(sensor);
+		
+		return sensor;*/
+	}
+	
+	
+	
+
+
+
+

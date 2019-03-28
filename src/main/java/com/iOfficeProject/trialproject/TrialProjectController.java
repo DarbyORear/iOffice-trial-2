@@ -1,6 +1,9 @@
 package com.iOfficeProject.trialproject;
 
 
+import javax.servlet.http.HttpSession;
+import java.time.LocalDateTime; //USE THIS TO GET CURRENT DATE/TIME: Object time = LocalDateTime.now();
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -13,8 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.iOfficeProject.trialproject.APIclasses.WorkPlacesResults;
+import com.iOfficeProject.trialproject.APIclasses.CWorkplace;
 import com.iOfficeProject.trialproject.APIclasses.WorkPoint;
+import com.iOfficeProject.trialproject.APIclasses.iOfficeSensor;
+
+
 
 @Controller
 public class TrialProjectController {
@@ -166,8 +172,9 @@ private ModelAndView showSensorStatus() {
 //GET WORKPOINT DATA
 @RequestMapping(value = "/workpoint", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE, produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
 
-private ModelAndView showSensorData() {
+private ModelAndView showSensorData(HttpSession session) {
 	ModelAndView mav = new ModelAndView("workpoint");
+	WorkPoint thisWorkPoint = null;
 	
 	// Create a rest template
 	RestTemplate restTemplate = new RestTemplate();
@@ -183,22 +190,53 @@ private ModelAndView showSensorData() {
 	String url = "https://internal-us.coworkr.co/api/workPlace/gMGkJyMzxQZcoD9ed/workPoints/status";
 
 	// Make the Request.
-			ResponseEntity<WorkPlacesResults> response = restTemplate.exchange(url,
+			ResponseEntity<CWorkplace> response = restTemplate.exchange(url,
 			HttpMethod.GET, new HttpEntity<>(headers),
-			WorkPlacesResults.class);
+			CWorkplace.class);
 	
 	// Extract body from response.
-			WorkPlacesResults result = response.getBody();
+			CWorkplace result = response.getBody();
 	
-	//add the info we want to jsp
 			
-//NOTE: This will return one result. I want a list of all the results...
-			mav.addObject("name", result.getWorkplaces().get(0).getWorkpoints().get(0).getName());
+			//write a for loop that will loop through each Workpoint and get its id;
+			//save id in a variable
+			for(int i = 0; i < result.getWorkpoints().size(); i++) {
+				//loop through each workpoint and get i.
+				//i should be an object with multiple properties.
+				thisWorkPoint = result.getWorkpoints().get(i);
+			}
+			
+			//add that id to object (and then to session, etc.)
+			//NOTE: ADD "thisWorkPoint" to object or add individual properties??
+				//adding individual properties for now, can take off if needed.
+			//mav.addObject("workpoint", thisWorkPoint);
+			mav.addObject("workPointId", thisWorkPoint.get_id());
+			mav.addObject("workPointStart", thisWorkPoint.getLastConnect());
+			mav.addObject("workPointInUse", thisWorkPoint.isOccupied());
+			mav.addObject("workPointEnd", thisWorkPoint.getOccupancyChanged());
+			
+			//NOTE: I CAN PROBABLY DELETE THE SESSION STUFF:
+			//start a session and add workpoint traits to session:
+			 session.setAttribute("workPointId", thisWorkPoint.get_id());
+			 session.setAttribute("workPointStart", thisWorkPoint.getLastConnect());
+			 session.setAttribute("workPointInUse", thisWorkPoint.isOccupied());
+			 session.setAttribute("workPointEnd", thisWorkPoint.getOccupancyChanged());
+			 
+			 //create a new iOffice sensor and set its properties using Workpoint properties.
+			 //this needs to probably be in a for loop so that it does this for each sensor
+			 iOfficeSensor sensor = new iOfficeSensor(/*add stuff*/);
+			 sensor.setUtilized(thisWorkPoint.isOccupied());
+			 sensor.setuId(thisWorkPoint.get_id());
+			 sensor.setStartDate(thisWorkPoint.getLastConnect());
+			 sensor.setEndDate(thisWorkPoint.getOccupancyChanged());
+			 
+		//I might want to make this a new method...I need to make a call to the CoWorkr API periodically and check to see 
+			 //if the status has changed within that time period
+					
+
 			
 	return mav;
 }
-
-
 
 
 
