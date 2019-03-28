@@ -1,8 +1,10 @@
 package com.iOfficeProject.trialproject;
 
 
+import java.time.LocalDateTime;
+
 import javax.servlet.http.HttpSession;
-import java.time.LocalDateTime; //USE THIS TO GET CURRENT DATE/TIME: Object time = LocalDateTime.now();
+//import java.time.LocalDateTime; //USE THIS TO GET CURRENT DATE/TIME: Object time = LocalDateTime.now();
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -33,11 +35,11 @@ String userId;
 
 
 //home page
-@RequestMapping("/")
+/*@RequestMapping("/")
 private ModelAndView showHome() {
 	ModelAndView mav = new ModelAndView("index");
 	return mav;
-}
+}*/
 
 //3/24: Commenting out the individual controllers for individual classes:
 
@@ -170,10 +172,10 @@ private ModelAndView showSensorStatus() {
 
 
 //GET WORKPOINT DATA
-@RequestMapping(value = "/workpoint", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE, produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(value = "/", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE, produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
 
 private ModelAndView showSensorData(HttpSession session) {
-	ModelAndView mav = new ModelAndView("workpoint");
+	ModelAndView mav = new ModelAndView("coworkr-data");
 	WorkPoint thisWorkPoint = null;
 	
 	// Create a rest template
@@ -204,6 +206,12 @@ private ModelAndView showSensorData(HttpSession session) {
 				//loop through each workpoint and get i.
 				//i should be an object with multiple properties.
 				thisWorkPoint = result.getWorkpoints().get(i);
+				//WHAT IF I ADD CREATING A NEW IOFFICE SENSOR HERE SO ONE SENSOR GETS CREATED FOR EVERY WORKPOINT THAT IS ITERATED OVER??
+				 iOfficeSensor sensor = new iOfficeSensor();
+				 sensor.setUtilized(thisWorkPoint.isOccupied());
+				 sensor.setuId(thisWorkPoint.get_id());
+				 sensor.setStartDate(thisWorkPoint.getLastConnect());
+				 sensor.setEndDate(thisWorkPoint.getOccupancyChanged());
 			}
 			
 			//add that id to object (and then to session, etc.)
@@ -224,15 +232,26 @@ private ModelAndView showSensorData(HttpSession session) {
 			 
 			 //create a new iOffice sensor and set its properties using Workpoint properties.
 			 //this needs to probably be in a for loop so that it does this for each sensor
-			 iOfficeSensor sensor = new iOfficeSensor(/*add stuff*/);
+			 //NOTE: COMMENTING OUT THIS SECTION BECAUSE I ADDED IT TO THE FOR LOOP ABOVE INSTEAD.
+			 /*iOfficeSensor sensor = new iOfficeSensor();
 			 sensor.setUtilized(thisWorkPoint.isOccupied());
 			 sensor.setuId(thisWorkPoint.get_id());
 			 sensor.setStartDate(thisWorkPoint.getLastConnect());
-			 sensor.setEndDate(thisWorkPoint.getOccupancyChanged());
+			 sensor.setEndDate(thisWorkPoint.getOccupancyChanged());*/
 			 
-		//I might want to make this a new method...I need to make a call to the CoWorkr API periodically and check to see 
-			 //if the status has changed within that time period
-					
+
+	//Call method(s) from WorkPoint class to check whether workpoint statuses have changed.
+			 //Maybe have an if statement or a for loop with the condition that if 5 minutes have passed,
+			 //then check status (findStartDate, findEndDate)...if LocalDateTime.now() += 5 minutes, then check status.
+			 
+			 LocalDateTime.now();
+			 //if(System.currentTimeMillis() += 500000) {}
+			 boolean someCondition = true;
+			 while(someCondition == true) {
+			 Object currentTime = System.currentTimeMillis();
+			 //whenevery currentTime += 300000 milliseconds, check status again
+				 
+			 }
 
 			
 	return mav;

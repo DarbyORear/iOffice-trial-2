@@ -1,8 +1,7 @@
 package com.iOfficeProject.trialproject.APIclasses;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.time.LocalDateTime;
 
 public class WorkPoint {
 	
@@ -11,15 +10,15 @@ public class WorkPoint {
 	private String name;
 	private String workPlaceId;
 	private String workPlaceName;
-	private Date lastConnect;
+	private LocalDateTime lastConnect;
 	private boolean connected;
 	private boolean recentlyConnected;
 	private boolean occupied;
-	private Date occupancyChanged;
+	private LocalDateTime occupancyChanged;
 	
 	//instance variables that pertain to iOffice sensor data:
-	private Date startDate;
-	private Date endDate;
+	private LocalDateTime startDate;
+	private LocalDateTime endDate;
 	private String uId;
 	private boolean utilized;
 
@@ -36,7 +35,7 @@ public class WorkPoint {
 		
 	}
 	
-	public WorkPoint(String _id, boolean occupied, Date lastConnect, Date occupancyChanged) {
+	public WorkPoint(String _id, boolean occupied, LocalDateTime lastConnect, LocalDateTime occupancyChanged) {
 		this._id = _id;
 		this.occupied = occupied;
 		this.lastConnect = lastConnect;
@@ -44,12 +43,12 @@ public class WorkPoint {
 	}
 
 
-	public Date getOccupancyChanged() {
+	public LocalDateTime getOccupancyChanged() {
 		return occupancyChanged;
 	}
 
 
-	public void setOccupancyChanged(Date occupancyChanged) {
+	public void setOccupancyChanged(LocalDateTime occupancyChanged) {
 		this.occupancyChanged = occupancyChanged;
 	}
 
@@ -102,13 +101,13 @@ public class WorkPoint {
 
 
 
-	public Date getLastConnect() {
+	public LocalDateTime getLastConnect() {
 		return lastConnect;
 	}
 
 
 
-	public void setLastConnect(Date lastConnect) {
+	public void setLastConnect(LocalDateTime lastConnect) {
 		this.lastConnect = lastConnect;
 	}
 
@@ -179,7 +178,7 @@ public class WorkPoint {
 	
 	//method to find date and time sensor connected:
 	//NOTE: SHOULD THIS BE TYPE STRING OR DATE?
-	public Date findStartDate() {
+	public LocalDateTime findStartDate() {
 		//CoWorkr startDate is listed as: lastConnect
 		startDate = this.getLastConnect();
 		return startDate;
@@ -187,7 +186,7 @@ public class WorkPoint {
 	}
 	
 	//method to find date and time sensor disconnected:
-	public Date findEndDate() {
+	public LocalDateTime findEndDate() {
 		//Coworkr endDate is listed as: occupancyChanged
 		
 		boolean occupied = this.isOccupied();
@@ -195,6 +194,7 @@ public class WorkPoint {
 			endDate = this.getOccupancyChanged();
 		} else {
 			//return today's date and current time
+			LocalDateTime.now();
 		}
 		
 		return endDate;

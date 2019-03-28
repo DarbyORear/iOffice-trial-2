@@ -1,13 +1,9 @@
 package com.iOfficeProject.trialproject;
 
 
-import java.util.Date;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.iOfficeProject.trialproject.APIclasses.WorkPoint;
-import com.iOfficeProject.trialproject.APIclasses.iOfficeSensor;
 
 
 @SpringBootApplication

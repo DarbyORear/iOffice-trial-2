@@ -1,13 +1,13 @@
 package com.iOfficeProject.trialproject.APIclasses;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class iOfficeSensor {
 	
 	public String uId;
 	public boolean utilized;
-	public Date startDate;
-	public Date endDate;
+	public LocalDateTime startDate;
+	public LocalDateTime endDate;
 	public String getuId() {
 		return uId;
 	}
@@ -20,21 +20,21 @@ public class iOfficeSensor {
 	public void setUtilized(boolean utilized) {
 		this.utilized = utilized;
 	}
-	public Date getStartDate() {
+	public LocalDateTime getStartDate() {
 		return startDate;
 	}
-	public void setStartDate(Date startDate) {
+	public void setStartDate(LocalDateTime startDate) {
 		this.startDate = startDate;
 	}
-	public Date getEndDate() {
+	public LocalDateTime getEndDate() {
 		return endDate;
 	}
-	public void setEndDate(Date endDate) {
+	public void setEndDate(LocalDateTime endDate) {
 		this.endDate = endDate;
 	}
 	
 	//CONSTRUCTOR WITH PARAMETERS:
-	public iOfficeSensor(String uId, boolean utilized, Date startDate, Date endDate) {
+	public iOfficeSensor(String uId, boolean utilized, LocalDateTime startDate, LocalDateTime endDate) {
 		super();
 		this.uId = uId;
 		this.utilized = utilized;
