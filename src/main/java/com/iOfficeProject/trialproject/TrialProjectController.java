@@ -147,7 +147,7 @@ private ModelAndView getSensorData(HttpSession session) throws IOException {
 			String sensorAsString = mapper.writeValueAsString(sensorList);
 			mav.addObject("sensors", sensorAsString);
 	//*******************************************************************************************************		
-			
+			mav.addObject("workpoints", json);
 			
 
 	//Call method(s) from WorkPoint class to check whether workpoint statuses have changed.
