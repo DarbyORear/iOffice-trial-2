@@ -2,30 +2,51 @@ package com.iOfficeProject.trialproject.APIclasses;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+
+
+import com.fasterxml.jackson.annotation.JsonRootName;
+//import com.fasterxml.jackson.annotation.JsonValue;
+
+@JsonRootName(value = "sensor")
 public class iOfficeSensor {
 	
 	public String uId;
 	public boolean utilized;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss") 
+	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	public LocalDateTime startDate;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss") 
+	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	public LocalDateTime endDate;
+	
+	//@JsonValue
 	public String getuId() {
 		return uId;
 	}
 	public void setuId(String uId) {
 		this.uId = uId;
 	}
+	
+	//@JsonValue
 	public boolean isUtilized() {
-		return utilized;
+		 return utilized;
 	}
 	public void setUtilized(boolean utilized) {
 		this.utilized = utilized;
 	}
+	
+	//@JsonValue
 	public LocalDateTime getStartDate() {
 		return startDate;
 	}
-	public void setStartDate(LocalDateTime startDate) {
-		this.startDate = startDate;
+	public void setStartDate(LocalDateTime string) {
+		this.startDate = string;	
 	}
+	
+	//@JsonValue
 	public LocalDateTime getEndDate() {
 		return endDate;
 	}
@@ -47,15 +68,6 @@ public class iOfficeSensor {
 	}
 	
 	
-	//I THINK I NEED TO RE-DO THE CONSTRUCTOR WITH PARAMETERS. THE SENSOR'S PARAMETERS SHOULD BE DETERMINED
-	//BY THE WORKPOINT'S PARAMETERS, LIKE THIS:
-	
-	/*public iOfficeSensor(boolean utilized, Date startDate, String uId, Date endDate) {
-		super();
-		WorkPoint._id = uId;
-		WorkPoint.set_id(uId);
-		WorkPoint.get_id() = uId;
-	}*/
 	
 
 }

@@ -9,7 +9,7 @@
 <title>Data From CoWorkr API</title>
 </head>
 <body>
-<p>Workplace: ${workPlace}</p>
+<p>Workplace: ${sensors}</p>
 </body>
 </html>
 

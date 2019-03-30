@@ -1,0 +1,413 @@
+[
+  {
+    "_id": "5ba8206dd92a7404ffa55540",
+    "lastConnect": "2019-03-21T15:21:47.890Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-06T21:15:19.150Z"
+  },
+  {
+    "_id": "5ba820a9d92a7404ffa55785",
+    "lastConnect": "2019-03-21T15:21:33.600Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:49:54.500Z"  
+  },
+  {
+    "_id": "5ba820a1d92a7404ffa55726",
+    "lastConnect": "2019-03-21T15:20:43.710Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:49:30.760Z"
+  },
+  {
+    "_id": "5ba820e8d92a7404ffa55abc",
+    "lastConnect": "2019-03-21T15:21:29.280Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:49:19.850Z"
+  },
+  {
+    "_id": "5ba820f2d92a7404ffa55b83",
+    "lastConnect": "2019-03-21T15:21:52.470Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:49:12.550Z"
+  },
+  {
+    "_id": "5ba8208ed92a7404ffa55667",
+    "lastConnect": "2019-03-21T15:21:07.380Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:49:12.440Z"
+  },
+  {
+    "_id": "5ba82099d92a7404ffa556e5",
+    "lastConnect": "2019-03-21T15:22:15.660Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:49:05.250Z"
+  },
+  {
+    "_id": "5ba820d93f5498051897169b",
+    "lastConnect": "2019-03-21T15:22:18.100Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:49:00.020Z"
+  },
+  {
+    "_id": "5ba820c3d92a7404ffa55890",
+    "lastConnect": "2019-03-21T15:21:04.850Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:48:53.780Z"
+  },
+  {
+    "_id": "5ba8207cd92a7404ffa555c9",
+    "lastConnect": "2019-03-21T15:22:01.380Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:48:49.320Z"
+  },
+  {
+    "_id": "5ba820863f5498051897144f",
+    "lastConnect": "2019-03-21T15:21:54.580Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:48:44.760Z"
+  },
+  {
+    "_id": "5ba8207b3f54980518971411",
+    "lastConnect": "2019-03-21T15:20:55.260Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:48:36.060Z"
+  },
+  {
+    "_id": "5ba82130d92a7404ffa55e81",
+    "lastConnect": "2019-03-21T15:22:21.810Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-26T02:45:21.750Z"
+  },
+  {
+    "_id": "5ba820153f549805189711bb",
+    "lastConnect": "2019-03-21T15:21:56.180Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-25T17:08:01.860Z"
+  },
+  {
+    "_id": "5ba8201f3f5498051897120c",
+    "lastConnect": "2019-03-21T15:21:07.110Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-25T17:07:57.000Z"
+  },
+  {
+    "_id": "5ba82004d92a7404ffa5511c",
+    "lastConnect": "2019-03-21T15:20:56.600Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-25T17:07:52.090Z"
+  },
+  {
+    "_id": "5ba82042d92a7404ffa55381",
+    "lastConnect": "2019-03-21T15:22:05.050Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-25T17:07:49.820Z"
+  },
+  {
+    "_id": "5ba82062d92a7404ffa554b5",
+    "lastConnect": "2019-03-21T15:20:27.050Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-25T17:07:38.910Z"
+  },
+  {
+    "_id": "5ba8208e3f54980518971479",
+    "lastConnect": "2019-03-21T15:20:33.880Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-25T17:07:26.690Z"
+  },
+  {
+    "_id": "5ba8201d3f54980518971201",
+    "lastConnect": "2019-03-21T15:22:02.330Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-25T17:07:24.420Z"
+  },
+  {
+    "_id": "5ba82008d92a7404ffa5515a",
+    "lastConnect": "2019-02-04T02:53:31.540Z",
+    "connected": false,
+    "occupied": false,
+    "occupancyChanged": "2018-12-27T16:18:11.380Z"
+  },
+  {
+    "_id": "5ae674d9b79d6314c5c8459c",
+    "lastConnect": "2018-05-03T08:53:26.510Z",
+    "connected": false,
+    "occupied": true,
+    "occupancyChanged": "2018-05-03T08:53:26.510Z"
+  },
+  {
+    "_id": "5abbfa4cf8dff605289a2f0c",
+    "lastConnect": "2018-04-30T01:55:11.110Z",
+    "connected": false,
+    "occupied": true,
+    "occupancyChanged": "2018-04-30T01:48:07.650Z"
+  },
+  {
+    "_id": "5917bb1d4b8c7d4223055a86",
+    "lastConnect": "2018-04-11T15:31:51.030Z",
+    "connected": false,
+    "occupied": true
+  },
+  {
+    "_id": "5c1a250b14f36f052f2da03f",
+    "lastConnect": "2018-12-19T11:01:31.020Z",
+    "connected": false,
+    "occupied": false
+  },
+  {
+    "_id": "5ba82055d92a7404ffa5542f",
+    "lastConnect": "2019-03-21T15:22:08.430Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T15:22:08.430Z"
+  },
+  {
+    "_id": "5a58f4e891b2530535c24db8",
+    "lastConnect": "2019-03-21T15:22:02.650Z",
+    "connected": true,
+    "occupied": true,
+    "occupancyChanged": "2019-03-21T15:22:02.650Z"
+  },
+  {
+    "_id": "5ba820fed92a7404ffa55c54",
+    "lastConnect": "2019-03-21T15:21:42.010Z",
+    "connected": true,
+    "occupied": true,
+    "occupancyChanged": "2019-03-21T15:21:42.010Z"
+  },
+  {
+    "_id": "5ba8204cd92a7404ffa553df",
+    "lastConnect": "2019-03-21T15:21:31.190Z",
+    "connected": true,
+    "occupied": true,
+    "occupancyChanged": "2019-03-21T15:21:31.190Z"
+  },
+  {
+    "_id": "5a8eb7cf60daa60529aff37a",
+    "lastConnect": "2019-03-21T15:21:25.840Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T15:21:25.840Z"
+  },
+  {
+    "_id": "5ba8209a3f549805189714de",
+    "lastConnect": "2019-03-21T15:21:12.980Z",
+    "connected": true,
+    "occupied": true,
+    "occupancyChanged": "2019-03-21T15:21:12.980Z"
+  },
+  {
+    "_id": "5ba82008d92a7404ffa55151",
+    "lastConnect": "2019-03-21T15:21:06.740Z",
+    "connected": true,
+    "occupied": true,
+    "occupancyChanged": "2019-03-21T15:19:21.950Z"
+  },
+  {
+    "_id": "5ba820183f549805189711d3",
+    "lastConnect": "2019-03-21T15:21:35.490Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T15:18:35.530Z"
+  },
+  {
+    "_id": "5ba8204ad92a7404ffa553c4",
+    "lastConnect": "2019-03-21T15:21:31.560Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T15:16:31.630Z"
+  },
+  {
+    "_id": "5ba82066d92a7404ffa554e1",
+    "lastConnect": "2019-03-21T15:21:58.290Z",
+    "connected": true,
+    "occupied": true,
+    "occupancyChanged": "2019-03-21T15:15:12.280Z"
+  },
+  {
+    "_id": "5ba82096d92a7404ffa556b5",
+    "lastConnect": "2019-03-21T15:21:49.600Z",
+    "connected": true,
+    "occupied": true,
+    "occupancyChanged": "2019-03-21T15:12:09.350Z"
+  },
+  {
+    "_id": "5ba820e9d92a7404ffa55ac8",
+    "lastConnect": "2019-03-21T15:21:38.660Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T14:52:39.010Z"
+  },
+  {
+    "_id": "5a58f4c3a0437b050b107ae6",
+    "lastConnect": "2019-03-21T15:21:31.440Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T14:48:31.810Z"
+  },
+  {
+    "_id": "5a58f4d791b2530535c24d46",
+    "lastConnect": "2019-03-21T15:22:06.410Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T14:32:07.000Z"
+  },
+  {
+    "_id": "5ba82009d92a7404ffa55160",
+    "lastConnect": "2019-03-21T15:20:28.830Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T14:07:29.810Z"
+  },
+  {
+    "_id": "5ba820933f549805189714a5",
+    "lastConnect": "2019-03-21T15:22:00.760Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T13:40:02.090Z"
+  },
+  {
+    "_id": "5ba821283f54980518971976",
+    "lastConnect": "2019-03-21T15:20:31.910Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T12:30:33.940Z"
+  },
+  {
+    "_id": "5ba82051d92a7404ffa55404",
+    "lastConnect": "2019-03-21T15:21:38.820Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-21T10:48:41.890Z"
+  },
+  {
+    "_id": "5ba82009d92a7404ffa55168",
+    "lastConnect": "2019-03-21T15:21:41.410Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-20T21:41:56.060Z"
+  },
+  {
+    "_id": "5ba82066d92a7404ffa554e6",
+    "lastConnect": "2019-03-21T15:21:39.420Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-20T20:20:53.860Z"
+  },
+  {
+    "_id": "5ba82067d92a7404ffa554ee",
+    "lastConnect": "2019-03-21T15:21:25.010Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-03-20T12:56:45.420Z"
+  },
+  {
+    "_id": "5ba820f5d92a7404ffa55bc4",
+    "lastConnect": "2019-03-21T15:21:54.170Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-16T21:21:02.430Z"
+  },
+  {
+    "_id": "5ba82008d92a7404ffa55155",
+    "lastConnect": "2019-02-11T20:03:52.410Z",
+    "connected": false,
+    "occupied": false,
+    "occupancyChanged": "2019-02-10T19:06:08.900Z"
+  },
+  {
+    "_id": "5ba8200ed92a7404ffa55192",
+    "lastConnect": "2019-03-21T15:22:17.830Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-02-06T03:58:49.140Z"
+  },
+  {
+    "_id": "5ba821013f54980518971841",
+    "lastConnect": "2019-03-21T15:21:59.200Z",
+    "connected": true,
+    "occupied": false,
+    "occupancyChanged": "2019-01-22T00:04:50.240Z"
+  },
+  {
+    "_id": "5ace83aa3ce4e508e93fd56c",
+    "lastConnect": "2019-01-01T11:03:53.870Z",
+    "connected": false,
+    "occupied": true,
+    "occupancyChanged": "2019-01-01T11:01:15.110Z"
+  },
+  {
+    "_id": "5ac90df02464dc08b051a0c7",
+    "lastConnect": "2018-12-04T22:18:09.480Z",
+    "connected": false,
+    "occupied": true,
+    "occupancyChanged": "2018-12-04T21:32:17.690Z"
+  },
+  {
+    "_id": "5ac90e092464dc08b051a209",
+    "lastConnect": "2018-10-25T22:08:59.250Z",
+    "connected": false,
+    "occupied": true,
+    "occupancyChanged": "2018-10-25T21:52:01.700Z"
+  },
+  {
+    "_id": "5ac90df3d8958908b5df9b2e",
+    "lastConnect": "2018-10-23T21:38:59.760Z",
+    "connected": false,
+    "occupied": true,
+    "occupancyChanged": "2018-10-23T21:36:20.220Z"
+  },
+  {
+    "_id": "5ae490b7377e1b09915497ec",
+    "lastConnect": "2018-10-19T02:31:20.630Z",
+    "connected": false,
+    "occupied": false,
+    "occupancyChanged": "2018-10-19T01:36:43.440Z"
+  },
+  {
+    "_id": "5ac90df92464dc08b051a141",
+    "lastConnect": "2018-10-14T22:32:27.390Z",
+    "connected": false,
+    "occupied": true,
+    "occupancyChanged": "2018-10-14T22:03:42.540Z"
+  },
+  {
+    "_id": "5ac90e04d8958908b5df9bed",
+    "lastConnect": "2018-10-12T20:45:10.540Z",
+    "connected": false,
+    "occupied": true,
+    "occupancyChanged": "2018-10-12T20:25:24.960Z"
+  },
+  {
+    "_id": "5ac90df62464dc08b051a127",
+    "lastConnect": "2018-08-14T18:29:53.130Z",
+    "connected": false,
+    "occupied": true,
+    "occupancyChanged": "2018-08-14T17:56:19.450Z"
+  },
+  {
+    "_id": "5a58f4dda0437b050b107b92",
+    "lastConnect": "2018-05-24T11:28:09.330Z",
+    "connected": false,
+    "occupied": false,
+    "occupancyChanged": "2018-05-24T11:26:09.370Z"
+  }
+]
