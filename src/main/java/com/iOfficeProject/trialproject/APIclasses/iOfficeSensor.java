@@ -8,13 +8,13 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName(value = "sensor")
 public class iOfficeSensor {
-	
+		
 	public String uId;
 	public boolean utilized;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss") 
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'hh:mm:ss'Z'") 
 	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	public LocalDateTime startDate;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss") 
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'hh:mm:ss'Z'") 
 	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	public LocalDateTime endDate;
 	
@@ -54,11 +54,11 @@ public class iOfficeSensor {
 		this.endDate = endDate;
 	}
 	
-	public iOfficeSensor(String uId, boolean utilized, LocalDateTime startDate, LocalDateTime endDate) {
+	public iOfficeSensor(boolean utilized, LocalDateTime startDate, String uId, LocalDateTime endDate) {
 		super();
-		this.uId = uId;
 		this.utilized = utilized;
 		this.startDate = startDate;
+		this.uId = uId;
 		this.endDate = endDate;
 	}
 	

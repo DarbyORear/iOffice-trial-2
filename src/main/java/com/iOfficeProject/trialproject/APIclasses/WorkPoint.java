@@ -146,56 +146,6 @@ public class WorkPoint {
 	}
 	
 	
-
-
-/*//Methods for translating workpoint data to sensor data:
-	
-	//method to get uid for each sensor:
-	public String sensorId(){
-//		//get id/uuid for each sensor
-//		String thisSensor = list.getWorkpoint().getUuid();
-		uId = this.get_id();
-		return uId;
-		
-	}
-	
-	//method to determine if sensors are utilized
-	public boolean utilized(){
-		
-//		//get id for each sensor
-		boolean occupied = this.isOccupied();
-		
-		if(occupied == false){
-			utilized = false;
-		};
-
-		//if isOccupied, then isUtilized:
-		return utilized;
-	}
-	
-	
-	//method to find date and time sensor connected:
-	public LocalDateTime findStartDate() {
-		startDate = this.getLastConnect();
-		return startDate;
-
-	}
-	
-	//method to find date and time sensor disconnected:
-	public LocalDateTime findEndDate() {
-		
-		boolean occupied = this.isOccupied();
-		if(!occupied) {
-			endDate = this.getOccupancyChanged();
-		} else {
-			//return today's date and current time
-			LocalDateTime.now();
-		}
-		
-		return endDate;
-		
-	}*/
-
 	
 	}
 	

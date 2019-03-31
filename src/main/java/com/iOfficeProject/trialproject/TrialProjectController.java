@@ -2,6 +2,7 @@ package com.iOfficeProject.trialproject;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.nio.file.Files;
 //import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -78,8 +79,8 @@ String userId;
 					
 					//set properties of sensor object with corresponding workpoint values
 					sensor.setUtilized(thisWorkPoint.isOccupied());
-					sensor.setuId(thisWorkPoint.get_id());
 					sensor.setStartDate(thisWorkPoint.getLastConnect());
+					sensor.setuId(thisWorkPoint.get_id());
 					sensor.setEndDate(thisWorkPoint.getOccupancyChanged());
 					
 					//add new sensor to ArrayList	
@@ -126,12 +127,10 @@ String userId;
 		while(currentTime == System.currentTimeMillis()) {
 		
 			//Reading mock API information directly from file, due to authorization issues. Normally would use the API call above.
-//FIXME: try to figure out how to fix filepath/classpath so that classloader will work intead of typing in the full classpath in the code	
-			//ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+			//Also did not use ClassLoader due to space in file directory name.
 			File myfile = new File("C:\\Users\\Wes\\Documents\\Darby stuff\\IDE\\trial-project\\target\\classes\\workPoints.json");
 			
 			ObjectMapper mapper = new ObjectMapper();
-			
 			String json = new String(Files.readAllBytes(myfile.toPath()));
 			
 			List<WorkPoint> workpoints = mapper.readValue(json, new TypeReference<List<WorkPoint>>() { });
@@ -145,8 +144,8 @@ String userId;
 						 
 						 iOfficeSensor sensor = new iOfficeSensor();
 						 sensor.setUtilized(thisWorkPoint.isOccupied());
-						 sensor.setuId(thisWorkPoint.get_id());
 						 sensor.setStartDate(thisWorkPoint.getLastConnect());
+						 sensor.setuId(thisWorkPoint.get_id());
 						 sensor.setEndDate(thisWorkPoint.getOccupancyChanged());
 						 //add to list
 						 sensorList.add(sensor);
