@@ -119,7 +119,7 @@ private ModelAndView getSensorData(HttpSession session) throws IOException {
 			
 ////3/30/19: THIS IS THE FINAL CODE FOR THE REAL API CALLS/POSTS://///////////////////////////////////////////////////////////////////////
 		//NOTE: Right now, when I run this code, it times out. The mock call will probably time out too because I told it to only start checking after 5 minutes....
-/*
+
 @RequestMapping(value = "/", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE, produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
 	private ModelAndView getAndPostData() throws IOException {
 			
@@ -188,7 +188,6 @@ private ModelAndView getSensorData(HttpSession session) throws IOException {
 			//add get and post data to view:
 			mav.addObject("sensors", sensorList);
 			mav.addObject("workpoints", result);
-			
 
 			}
 			
@@ -196,7 +195,6 @@ private ModelAndView getSensorData(HttpSession session) throws IOException {
 			//update view:
 			return mav;
 	}
-		*/	
 ///////3/30/19: END OF FINAL CODE FOR REAL API CALLS/POSTS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////3/30/19: THIS IS THE FINAL CODE FOR THE MOCK CALLS/POSTS TO THE "API"://////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -208,7 +206,7 @@ private ModelAndView getSensorData(HttpSession session) throws IOException {
 		ModelAndView mav = new ModelAndView("coworkr-data");
 		WorkPoint thisWorkPoint = null;
 		ArrayList<iOfficeSensor> sensorList = new ArrayList<>();
-		iOfficeSensor sensor = new iOfficeSensor();
+		//iOfficeSensor sensor = new iOfficeSensor();
 		//boolean someCondition = true;
 		
 
@@ -240,7 +238,7 @@ private ModelAndView getSensorData(HttpSession session) throws IOException {
 						 System.out.println("workpoint id: " + thisWorkPoint.get_id());
 						 mav.addObject("workpoints", json);
 						 
-						 //iOfficeSensor sensor = new iOfficeSensor();
+						 iOfficeSensor sensor = new iOfficeSensor();
 						 sensor.setUtilized(thisWorkPoint.isOccupied());
 						 sensor.setuId(thisWorkPoint.get_id());
 						 sensor.setStartDate(thisWorkPoint.getLastConnect());
@@ -248,10 +246,14 @@ private ModelAndView getSensorData(HttpSession session) throws IOException {
 						 //add to list
 						 sensorList.add(sensor);
 						 
+						 currentTime += 300000;
+					}
+						 
 						 String sensorAsString = mapper.writeValueAsString(sensorList);
 						 mav.addObject("sensors", sensorAsString);
+						 System.out.println(sensorAsString);
 					
-						 currentTime += 300000;
+						
 					
 					
 					//To post the data:
@@ -272,7 +274,7 @@ private ModelAndView getSensorData(HttpSession session) throws IOException {
 					//restTemplate.postForEntity(url, sensorList, String.class);
 
 					}
-		}
+		
 		//}
 		
 		return mav;

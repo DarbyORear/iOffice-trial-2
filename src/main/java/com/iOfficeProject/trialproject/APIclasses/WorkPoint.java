@@ -1,12 +1,7 @@
 package com.iOfficeProject.trialproject.APIclasses;
 
-
-
-
-
 import java.time.LocalDateTime;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
@@ -19,14 +14,12 @@ public class WorkPoint {
 	private String name;
 	private String workPlaceId;
 	private String workPlaceName;
-	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss") 
 	@JsonDeserialize(using = LocalDateTimeDeserializer.class) 
 	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	private LocalDateTime lastConnect;
 	private boolean connected;
 	private boolean recentlyConnected;
-	private boolean occupied;
-	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "YYYY-MM-dd HH:mm") 
+	private boolean occupied; 
 	@JsonDeserialize(using = LocalDateTimeDeserializer.class) 
 	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	private LocalDateTime occupancyChanged;
@@ -43,7 +36,6 @@ public class WorkPoint {
 		
 	}
 	
-	//ADDING A CONSTRUCTOR WITH PARAMETERS:
 	public WorkPoint(String _id, boolean occupied) {
 		this._id= _id;
 		this.occupied = occupied;
@@ -192,9 +184,7 @@ public class WorkPoint {
 	
 	
 	//method to find date and time sensor connected:
-	//NOTE: SHOULD THIS BE TYPE STRING OR DATE?
 	public LocalDateTime findStartDate() {
-		//CoWorkr startDate is listed as: lastConnect
 		startDate = this.getLastConnect();
 		return startDate;
 
@@ -202,7 +192,6 @@ public class WorkPoint {
 	
 	//method to find date and time sensor disconnected:
 	public LocalDateTime findEndDate() {
-		//Coworkr endDate is listed as: occupancyChanged
 		
 		boolean occupied = this.isOccupied();
 		if(!occupied) {
@@ -217,18 +206,6 @@ public class WorkPoint {
 	}
 
 	
-
-//method to take a Workpoint and convert it to a sensor??:
-	/*public Map<String, Object> createMap(/*Map<String, Object> newSensor)*//* {
-	Map<String, Object> sensor = new HashMap<String, Object>();
-		sensor.put("utilized", this.isOccupied());
-		sensor.put("startDate", this.getLastConnect());
-		sensor.put("sensorUid", this.get_id());
-		sensor.put("endDate", this.getOccupancyChanged());
-		
-		System.out.println(sensor);
-		
-		return sensor;*/
 	}
 	
 	
