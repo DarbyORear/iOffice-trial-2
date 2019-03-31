@@ -1,7 +1,6 @@
 package com.iOfficeProject.trialproject.APIclasses;
 
 import java.time.LocalDateTime;
-
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
@@ -9,7 +8,6 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
 public class WorkPoint {
 	
-	//instance variables that pertain to workpoint data:
 	private String _id;
 	private String name;
 	private String workPlaceId;
@@ -23,13 +21,6 @@ public class WorkPoint {
 	@JsonDeserialize(using = LocalDateTimeDeserializer.class) 
 	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	private LocalDateTime occupancyChanged;
-	
-	//instance variables that pertain to iOffice sensor data:
-	private LocalDateTime startDate;
-	private LocalDateTime endDate;
-	private String uId;
-	private boolean utilized;
-
 	
 
 	public WorkPoint() {
@@ -157,7 +148,7 @@ public class WorkPoint {
 	
 
 
-//Methods for translating workpoint data to sensor data:
+/*//Methods for translating workpoint data to sensor data:
 	
 	//method to get uid for each sensor:
 	public String sensorId(){
@@ -203,7 +194,7 @@ public class WorkPoint {
 		
 		return endDate;
 		
-	}
+	}*/
 
 	
 	}

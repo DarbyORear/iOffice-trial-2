@@ -8,14 +8,14 @@
 </head>
 <body>
 <div class = "CoWorkrData">
-<h4>Here's what my GET Requests to the CoWorkr API would look like with authorization: </h4>
-<p>CoWorkr WorkPoints Data</p>
-<p>${workpoints}</p>
+	<h4>Here's what my GET Requests to the CoWorkr API would look like with authorization: </h4>
+	<p>CoWorkr WorkPoints Data</p>
+	<p>${workpoints}</p>
 </div>
 <div class = "iOfficeData">
-<h4>Here's what my POST Requests to the iOffice API would look like with authorization: </h4>
-<p>iOffice Sensor Data: </p>
-<p>${sensors}</p>
+	<h4>Here's what my POST Requests to the iOffice API would look like with authorization: </h4>
+	<p>iOffice Sensor Data: </p>
+	<p>${sensors}</p>
 </div>
 </body>
 </html>
