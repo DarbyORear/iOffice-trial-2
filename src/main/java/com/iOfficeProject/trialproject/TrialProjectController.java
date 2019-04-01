@@ -40,12 +40,10 @@ String userId;
 @RequestMapping(value = "/", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE, produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
 	private ModelAndView getAndPostData() throws IOException {
 			
-			//1. set variables
+			//set variables
 			ModelAndView mav = new ModelAndView("coworkr-data");
 			WorkPoint thisWorkPoint = null;
 			ArrayList<iOfficeSensor> sensorList = new ArrayList<>();
-			iOfficeSensor sensor = new iOfficeSensor();
-			//boolean someCondition = true;
 
 			//create a RestTemplate:
 			RestTemplate restTemplate = new RestTemplate();
@@ -78,6 +76,7 @@ String userId;
 				thisWorkPoint = result.getWorkpoints().get(i);
 					
 					//set properties of sensor object with corresponding workpoint values
+					iOfficeSensor sensor = new iOfficeSensor();
 					sensor.setUtilized(thisWorkPoint.isOccupied());
 					sensor.setStartDate(thisWorkPoint.getLastConnect());
 					sensor.setuId(thisWorkPoint.get_id());
@@ -86,8 +85,8 @@ String userId;
 					//add new sensor to ArrayList	
 					 sensorList.add(sensor);
 					 
-					//tell it to 
-					 currentTime +=3000;
+					//tell it to check the status of the workpoints every 5 minutes
+					 currentTime +=300000;
 			}
 					 
 			//post the updated data to the iOffice API:
@@ -150,6 +149,7 @@ String userId;
 						 //add to list
 						 sensorList.add(sensor);
 						 
+						 //check status again after 5 minutes:
 						 currentTime += 300000;
 					}
 						 
